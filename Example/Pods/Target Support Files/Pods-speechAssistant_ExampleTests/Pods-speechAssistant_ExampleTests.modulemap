@@ -1,0 +1,6 @@
+framework module Pods_speechAssistant_ExampleTests {
+  umbrella header "Pods-speechAssistant_ExampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

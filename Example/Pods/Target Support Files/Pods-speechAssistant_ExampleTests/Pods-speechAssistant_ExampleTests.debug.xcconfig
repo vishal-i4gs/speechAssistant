@@ -1,0 +1,12 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/abseil-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-ProtoRPC-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-RxLibrary-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/googleapis-iOS13.2" "${PODS_CONFIGURATION_BUILD_DIR}/speechAssistant-iOS13.2"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC-iOS13.2/openssl_grpc.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf-iOS13.2/Protobuf.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/abseil-iOS13.2/absl.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core-iOS13.2/grpc.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-ProtoRPC-iOS13.2/ProtoRPC.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-RxLibrary-iOS13.2/RxLibrary.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-iOS13.2/GRPCClient.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/googleapis-iOS13.2/googleapis.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/speechAssistant-iOS13.2/speechAssistant.framework/Headers"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "GRPCClient" -framework "ProtoRPC" -framework "Protobuf" -framework "RxLibrary" -framework "absl" -framework "googleapis" -framework "grpc" -framework "openssl_grpc" -framework "speechAssistant"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

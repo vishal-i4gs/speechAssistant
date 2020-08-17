@@ -1,0 +1,31 @@
+{
+  "name": "speechAssistant",
+  "version": "0.1.0",
+  "summary": "A short description of speechAssistant.",
+  "description": "This is the speech assistant SDK",
+  "homepage": "https://github.com/vishal-i4gs/speechAssistant",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vishal-i4gs": "vishal.i4gs@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/vishal-i4gs/speechAssistant.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.2"
+  },
+  "source_files": "speechAssistant/Classes/**/*",
+  "resources": "speechAssistant/Assets/*.{xib}",
+  "dependencies": {
+    "googleapis": [
+
+    ]
+  },
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO=1"
+  }
+}

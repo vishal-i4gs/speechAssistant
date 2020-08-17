@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'speechAssistant_Example' do
+	pod 'googleapis', :path => '.'
+	pod 'speechAssistant', :path => '../'
+end
+
+target 'speechAssistant_ExampleTests' do
+ 	pod 'googleapis', :path => '.'
+ pod 'speechAssistant', :path => '../'
+end
