@@ -1,10 +1,5 @@
 # speechAssistant
 
-[![CI Status](https://img.shields.io/travis/vishaladori/speechAssistant.svg?style=flat)](https://travis-ci.org/vishaladori/speechAssistant)
-[![Version](https://img.shields.io/cocoapods/v/speechAssistant.svg?style=flat)](https://cocoapods.org/pods/speechAssistant)
-[![License](https://img.shields.io/cocoapods/l/speechAssistant.svg?style=flat)](https://cocoapods.org/pods/speechAssistant)
-[![Platform](https://img.shields.io/cocoapods/p/speechAssistant.svg?style=flat)](https://cocoapods.org/pods/speechAssistant)
-
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
