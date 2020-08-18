@@ -51,8 +51,14 @@ class speechAssistant_ExampleTests: XCTestCase {
 		// Use XCTAssert and related functions to verify your tests produce the correct results.
 	  let assitantViewController = AssistantViewController()
 		assitantViewController.performUIOperations = false
+		XCTAssertEqual(assitantViewController.currentLanguage,
+									 english,
+									 "The language should be english as default")
 		assitantViewController.recordAudio(NSObject())
 		assitantViewController.languageChanged(tamil)
+		XCTAssertEqual(assitantViewController.currentLanguage,
+									 tamil,
+									 "The language should be changed")
 		XCTAssertEqual(assitantViewController.state,
 									 .STARTED,
 									 "The state should be started")
