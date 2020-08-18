@@ -20,9 +20,60 @@ class speechAssistant_ExampleTests: XCTestCase {
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 	
-	func testExample() {
+	func testDefaultCase() {
 		// This is an example of a functional test case.
-		// Use XCTAssert and related functions to verify your tests produce the correct results.		
+		// Use XCTAssert and related functions to verify your tests produce the correct results.
+	  let assitantViewController = AssistantViewController()
+		assitantViewController.performUIOperations = false
+		assitantViewController.recordAudio(NSObject())
+		XCTAssertEqual(assitantViewController.state,
+									 .STARTED,
+									 "The state should be started")
+		assitantViewController.processResponseObtained("This is", error: nil)
+		assitantViewController.processResponseObtained("This is a test", error: nil)
+		let exp = expectation(description:"waiting for timeOut")
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+			exp.fulfill()
+		}
+		waitForExpectations(timeout: 4.0) { (error) in
+			XCTAssertEqual(assitantViewController.state,
+										 .ENDED,
+										 "The state should be ended")
+			XCTAssertEqual(assitantViewController.currentTranscript,
+										 "This is a test",
+										 "The transcript should match")
+		}
+
+	}
+	
+	func testLanguageChange() {
+		// This is an example of a functional test case.
+		// Use XCTAssert and related functions to verify your tests produce the correct results.
+	  let assitantViewController = AssistantViewController()
+		assitantViewController.performUIOperations = false
+		assitantViewController.recordAudio(NSObject())
+		assitantViewController.languageChanged(tamil)
+		XCTAssertEqual(assitantViewController.state,
+									 .STARTED,
+									 "The state should be started")
+		XCTAssertEqual(assitantViewController.currentLanguage,
+									 tamil,
+									 "The languages should match")
+		assitantViewController.processResponseObtained("நான் தமிழ்", error: nil)
+		assitantViewController.processResponseObtained("நான் தமிழ் பேசுகிறேன்", error: nil)
+		let exp = expectation(description:"waiting for timeOut")
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+			exp.fulfill()
+		}
+		waitForExpectations(timeout: 4.0) { (error) in
+			XCTAssertEqual(assitantViewController.state,
+										 .ENDED,
+										 "The state should be ended")
+			XCTAssertEqual(assitantViewController.currentTranscript,
+										 "நான் தமிழ் பேசுகிறேன்",
+										 "The transcript should match")
+		}
+
 	}
 	
 	func testPerformanceExample() {

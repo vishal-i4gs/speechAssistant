@@ -18,3 +18,10 @@ public let tamil = LanguageModel(name: "தமிழ்",code: "ta-IN",caption: 
 public let english = LanguageModel(name: "English",code: "en-IN",caption: "Please say something")
 public let hindi = LanguageModel(name: "हिन्दी",code: "hi-IN",caption: "कृपया कुछ कहे")
 
+/// An enum value which respresents the current state.
+///
+enum State {
+	case STARTED
+	case ENDED
+}
+

@@ -113,6 +113,9 @@ class AssistantViewController : UIViewController {
 	///
 	var currentTranscript:String? {
 		didSet {
+			if(performUIOperations == false) {
+				return
+			}
 			if(currentTranscript == nil) {
 				contentLabel.text = currentLanguage.caption
 				return
@@ -120,6 +123,8 @@ class AssistantViewController : UIViewController {
 			contentLabel.text = "\"\(String(describing: currentTranscript!))\""
 		}
 	}
+	
+	var performUIOperations:Bool?
 	
 	/// Specifies whether current speech - transcript session has ended successfully or not.
 	///
@@ -144,9 +149,12 @@ class AssistantViewController : UIViewController {
 		didSet {
 			delegate?.languageChangeCallback(currentLanguage)
 			currentTranscript = nil
-			languageButton.setTitle(currentLanguage.name, for: .normal)
 			SpeechRecognitionService.sharedInstance.languageCode
 				= currentLanguage.code
+			if(performUIOperations == false) {
+				return
+			}
+			languageButton.setTitle(currentLanguage.name, for: .normal)
 		}
 	}
 	
@@ -193,8 +201,7 @@ class AssistantViewController : UIViewController {
 		for language in supportedLanguages {
 			let action = UIAlertAction(title: language.name, style: .default) {
 				(action: UIAlertAction) in
-				self.currentLanguage = language
-				self.state = .STARTED
+				self.languageChanged(language)
 			}
 			languageSelectionOption.addAction(action)
 		}
@@ -210,6 +217,9 @@ class AssistantViewController : UIViewController {
 	/// Internal method that takes the current state makes the required UI changes based on it.
 	///
 	private func performUIChanges() {
+		if(performUIOperations == false) {
+			return
+		}
 		switch state {
 		case .STARTED:
 			wavesView.isHidden = false
@@ -263,6 +273,11 @@ class AssistantViewController : UIViewController {
 		_ = AudioController.sharedInstance.start()
 		finished = nil
 	}
+	
+	func languageChanged(_ language:LanguageModel) {
+		self.currentLanguage = language
+		self.state = .STARTED
+	}
 }
 
 extension AssistantViewController: AudioControllerDelegate {
@@ -284,30 +299,45 @@ extension AssistantViewController: AudioControllerDelegate {
 					guard let strongSelf = self else {
 						return
 					}
-					if(strongSelf.finished != nil) {
-						return
-					}
-					if error != nil {
-						strongSelf.finished = true
-					} else if let response = response {
-						let deadlineTime = DispatchTime.now() +
-							.milliseconds(maxTimeBetweenWordsInMillis)
-						strongSelf.endingTask?.cancel()
-						strongSelf.endingTask = DispatchWorkItem {
-							strongSelf.finished = true
-						}
-						DispatchQueue.main.asyncAfter(deadline: deadlineTime,
-																					execute: strongSelf.endingTask!)
+					var resultString = ""
+					if let response = response {
 						if let result = response.resultsArray[0]
 							as? StreamingRecognitionResult {
 							let array = result.alternativesArray
 							let alternative = array?.object(at: 0)
 								as! SpeechRecognitionAlternative
+							resultString = alternative.transcript
 							strongSelf.currentTranscript = alternative.transcript
 						}
+						strongSelf.processResponseObtained(resultString, error: error)
 					}
 			})
 			self.processAudioData = NSMutableData()
 		}
+	}
+	
+	/// The internal method that handles the transcript callbacks.
+	///
+	/// - Parameters:
+	///   - result: The `String` object of the current transcript.
+	///   - error: The `Error` object to indicate whether the transcription operation did not suceed.
+	///
+	func processResponseObtained(_ result:String, error:Error?) {
+		if(finished != nil) {
+			return
+		}
+		if error != nil {
+			finished = true
+			return
+		}
+		let deadlineTime = DispatchTime.now() +
+			.milliseconds(maxTimeBetweenWordsInMillis)
+		endingTask?.cancel()
+		endingTask = DispatchWorkItem {
+			self.finished = true
+		}
+		DispatchQueue.main.asyncAfter(deadline: deadlineTime,
+																	execute: endingTask!)
+		currentTranscript = result
 	}
 }
