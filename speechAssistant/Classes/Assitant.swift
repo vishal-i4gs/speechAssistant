@@ -30,6 +30,31 @@ public protocol AssistantDelegate: class {
 	func obtainedSpeechCallback(_ speech: String)
 }
 
+
+/// This  is an internal protocol to notigfy event changes from the viewController to the parent.
+///
+protocol AssistantViewModelDelegate: class {
+	
+	/// This method is called when the transcript is obtained and the data needs to be uploaded to the server.
+	///
+	/// - Parameters:
+	///   - data: The `NSMutableData` object that needs to be uploaded to the server.
+	///   - audioMetadata: The metadata of the audio.
+	///   - transcript : The `String` transcript of the audio.
+	///
+	func dataAndTranscriptCallback(_ data:NSMutableData,
+																 audioMetadata:[String:String],
+																 transcript: String)
+	
+	/// This method is called when the user changes the current language.
+	///
+	/// - Parameters:
+	///   - language: The `LanguageModel` of the updated language.
+	///
+	func languageChangeCallback(_ language:LanguageModel)
+}
+
+
 /// The `Assistant` is a only user facing instance that is used to setup and provides a delegate to handle callbacks appropriately.
 ///
 public class Assistant {
@@ -45,6 +70,10 @@ public class Assistant {
 	/// The reference to the current assistant view controller that is attached on top of the current topviewcontroller.
 	///
 	var assistantViewController: AssistantViewController?
+	
+	/// The reference to the current assistant view controller that is attached on top of the current topviewcontroller.
+	///
+	var assistantViewControllerViewModel: AssistantViewControllerViewModel?
 	
 	/// The delegate object that is used to return all the callbacks from the assistant.
 	///
@@ -74,7 +103,10 @@ public class Assistant {
 		assistantViewController =  AssistantViewController(
 			nibName: "AssitantViewController", bundle: Bundle(
 				for: AssistantViewController.self))
-		assistantViewController?.delegate = self
+		assistantViewControllerViewModel = AssistantViewControllerViewModel()
+		assistantViewController?.assistantViewModel = assistantViewControllerViewModel
+		assistantViewControllerViewModel?.viewControllerDelegate = assistantViewController
+		assistantViewControllerViewModel?.delegate = self
 	}
 	
 	/// The public method that is responsible for setting up the assitant view controller for the current top view controller.
@@ -96,12 +128,12 @@ public class Assistant {
 			parent.view.addSubview((self.assistantViewController!.view))
 		}
 		self.assistantViewController?.supportedLanguages = supportedLanguages!
-		self.assistantViewController?.currentLanguage = currentLanguage!
-		self.assistantViewController?.state = .ENDED
+		self.assistantViewControllerViewModel?.currentLanguage = currentLanguage!
+		self.assistantViewControllerViewModel?.state = .ENDED
 	}
 }
 
-extension Assistant: AssistantViewControllerDelegate {
+extension Assistant: AssistantViewModelDelegate {
 	
 	/// This method is called when the user changes the current language.
 	///
