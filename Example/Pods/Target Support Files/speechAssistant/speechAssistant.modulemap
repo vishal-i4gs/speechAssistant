@@ -1,0 +1,6 @@
+framework module speechAssistant {
+  umbrella header "speechAssistant-umbrella.h"
+
+  export *
+  module * { export * }
+}

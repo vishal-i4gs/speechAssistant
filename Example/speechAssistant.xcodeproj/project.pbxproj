@@ -383,15 +383,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-speechAssistant_ExampleTests/Pods-speechAssistant_ExampleTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-iOS13.2/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS13.2/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/abseil-iOS13.2/absl.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core-iOS13.2/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC-iOS13.2/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary-iOS13.2/RxLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-iOS13.2/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/googleapis-iOS13.2/googleapis.framework",
-				"${BUILT_PRODUCTS_DIR}/speechAssistant-iOS13.2/speechAssistant.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/googleapis/googleapis.framework",
+				"${BUILT_PRODUCTS_DIR}/speechAssistant/speechAssistant.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -439,15 +439,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-speechAssistant_Example/Pods-speechAssistant_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-iOS9.2/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS9.2/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/abseil-iOS9.2/absl.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core-iOS9.2/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC-iOS9.2/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary-iOS9.2/RxLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-iOS9.2/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/googleapis-iOS9.2/googleapis.framework",
-				"${BUILT_PRODUCTS_DIR}/speechAssistant-iOS9.2/speechAssistant.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/googleapis/googleapis.framework",
+				"${BUILT_PRODUCTS_DIR}/speechAssistant/speechAssistant.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -637,7 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8V569WYP45;
 				INFOPLIST_FILE = speechAssistant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vos.speech.speechAssistant-Example";
@@ -654,7 +654,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8V569WYP45;
 				INFOPLIST_FILE = speechAssistant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vos.speech.speechAssistant-Example";

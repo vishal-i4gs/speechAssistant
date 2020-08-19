@@ -197,26 +197,26 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-iOS9.2/openssl_grpc.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf-iOS9.2/Protobuf.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/abseil-iOS9.2/absl.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core-iOS9.2/grpc.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC-iOS9.2/ProtoRPC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary-iOS9.2/RxLibrary.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-iOS9.2/GRPCClient.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/googleapis-iOS9.2/googleapis.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/speechAssistant-iOS9.2/speechAssistant.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/abseil/absl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/googleapis/googleapis.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/speechAssistant/speechAssistant.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-iOS9.2/openssl_grpc.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf-iOS9.2/Protobuf.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/abseil-iOS9.2/absl.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core-iOS9.2/grpc.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC-iOS9.2/ProtoRPC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary-iOS9.2/RxLibrary.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-iOS9.2/GRPCClient.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/googleapis-iOS9.2/googleapis.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/speechAssistant-iOS9.2/speechAssistant.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/abseil/absl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/googleapis/googleapis.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/speechAssistant/speechAssistant.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

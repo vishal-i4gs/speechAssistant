@@ -1,6 +1,0 @@
-framework module ProtoRPC {
-  umbrella header "gRPC-ProtoRPC-iOS9.2-umbrella.h"
-
-  export *
-  module * { export * }
-}

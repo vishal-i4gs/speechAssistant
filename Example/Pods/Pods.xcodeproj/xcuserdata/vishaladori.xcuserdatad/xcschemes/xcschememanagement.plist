@@ -4,32 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>!ProtoCompiler-gRPCPlugin-iOS13.2.xcscheme</key>
+		<key>!ProtoCompiler-gRPCPlugin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>!ProtoCompiler-gRPCPlugin-iOS9.2.xcscheme</key>
+		<key>!ProtoCompiler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>!ProtoCompiler-iOS13.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>!ProtoCompiler-iOS9.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>BoringSSL-GRPC-iOS13.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>BoringSSL-GRPC-iOS9.2.xcscheme</key>
+		<key>BoringSSL-GRPC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,92 +29,47 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Protobuf-iOS13.2.xcscheme</key>
+		<key>Protobuf.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Protobuf-iOS9.2.xcscheme</key>
+		<key>abseil.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>abseil-iOS13.2.xcscheme</key>
+		<key>gRPC-Core.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>abseil-iOS9.2.xcscheme</key>
+		<key>gRPC-ProtoRPC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>gRPC-Core-iOS13.2.xcscheme</key>
+		<key>gRPC-RxLibrary.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>gRPC-Core-iOS9.2.xcscheme</key>
+		<key>gRPC-gRPCCertificates.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>gRPC-ProtoRPC-iOS13.2.xcscheme</key>
+		<key>gRPC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>gRPC-ProtoRPC-iOS9.2.xcscheme</key>
+		<key>googleapis.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>gRPC-RxLibrary-iOS13.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>gRPC-RxLibrary-iOS9.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>gRPC-iOS13.2-gRPCCertificates.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>gRPC-iOS13.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>gRPC-iOS9.2-gRPCCertificates.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>gRPC-iOS9.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>googleapis-iOS13.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>googleapis-iOS9.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>speechAssistant-iOS13.2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>speechAssistant-iOS9.2.xcscheme</key>
+		<key>speechAssistant.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
