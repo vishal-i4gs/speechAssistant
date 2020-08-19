@@ -3,6 +3,7 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the unit tests, clone the repo, change the target to `speechAssistant_ExampleTests`. Once done, select `Product` from the status bar and push `Test`
 
 ## Requirements
 
